@@ -1,0 +1,11 @@
+server:
+  port: 6666
+student:
+  id: 1
+  name: 张三
+  age: 17
+logging:
+  level:
+    root: warn
+  file:
+    name: D:\\log\\mySpingBootLog.log
