@@ -1,25 +1,21 @@
 package com.example.demo.entity;
 
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 /**
  * @author mahaiyang
- * @date 2024/3/12 9:50
+ * @date 2024/3/12 13:23
  */
-
 @Data
-public class UserInfo {
+public class ArticleInfo {
     private Integer id;
-    private String username;
-    private String pwd;
-    private String photo;
+    private String title;
+    private String content;
     private LocalDateTime createtime;
     private LocalDateTime updatetime;
-    /**
-     *   表示状态，是1就是正常用户
-     */
+    private Integer uid;
+    private Integer rcount;
     private Integer state;
 }

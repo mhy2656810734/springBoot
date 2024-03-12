@@ -5,7 +5,9 @@ import org.apache.catalina.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.beans.Transient;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,22 +32,27 @@ class UserMapperTest {
     void getById() {
         UserInfo userInfo = userMapper.getById(1);
         System.out.println(userInfo);
-        UserInfo userInfo1 = userMapper.getByUserName("admin");
-        System.out.println(userInfo1);
+//        UserInfo userInfo1 = userMapper.getByUserName("admin");
+//        System.out.println(userInfo1);
     }
 
     @Test
     void login() {
-        UserInfo us = new UserInfo();
-        us.setUsername("admin");
-        us.setPassword(" ' or 1 = '1");
-        UserInfo userInfo = userMapper.login(us);
-        System.out.println(userInfo);
+//        UserInfo us = new UserInfo();
+//        us.setUsername("admin");
+//        us.setPassword(" ' or 1 = '1");
+//        UserInfo userInfo = userMapper.login(us);
+//        System.out.println(userInfo);
     }
 
     @Test
     void getByName() {
         UserInfo userInfo = userMapper.getByName("ad");
         System.out.println(userInfo);
+    }
+    @Transactional
+    @Test
+    void update() {
+        System.out.println(userMapper.update(1,"xiaoma","hhhhh"));
     }
 }

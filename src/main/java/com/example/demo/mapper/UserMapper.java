@@ -27,4 +27,7 @@ public interface UserMapper {
     UserInfo getByUserName(@Param("username") String username);
     UserInfo login(UserInfo userInfo);
     UserInfo getByName(@Param("username") String username);
+    int update(@Param("id") Integer id,
+               @Param("password") String password,
+               @Param("newPassword") String newPassword);
 }
