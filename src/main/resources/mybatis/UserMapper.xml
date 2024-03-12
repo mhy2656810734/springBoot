@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <select id="getAll" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo
+    </select>
+    <select id="getById" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where id = ${id}
+    </select>
+    <select id="getByUserName" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where username = ${username}
+    </select>
+    <select id="login" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where username = '${username}' and password = '${password}'
+    </select>
+    <select id="getByName" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where username like concat('%',#{username},'%')
+    </select>
+</mapper>
