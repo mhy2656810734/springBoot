@@ -55,4 +55,14 @@ class UserMapperTest {
     void update() {
         System.out.println(userMapper.update(1,"xiaoma","hhhhh"));
     }
+
+    @Test
+    void addUser() {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUsername("李四");
+        userInfo.setPassword("lisi");
+        userInfo.setPhoto("hello.png");
+        int ret = userMapper.addUser(userInfo);
+        System.out.println("添加:"+ret);
+    }
 }

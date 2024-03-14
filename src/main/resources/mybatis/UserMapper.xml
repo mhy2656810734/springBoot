@@ -24,4 +24,15 @@
     <update id="update">
         update userinfo set password = #{newPassword} where id = #{id} and password = #{password}
     </update>
+    <insert id="addUser">
+        insert into userinfo (username,password
+        <if test="photo != null ">
+            ,photo
+        </if>
+        ) values (#{username},#{password}
+        <if test="photo != null">
+            ,#{photo}
+        </if>
+        )
+    </insert>
 </mapper>
