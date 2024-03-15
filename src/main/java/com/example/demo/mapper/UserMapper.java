@@ -1,6 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.entity.UserInfo;
+import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -31,4 +32,5 @@ public interface UserMapper {
                @Param("password") String password,
                @Param("newPassword") String newPassword);
     int addUser(UserInfo userInfo);
+    int addUser2(UserInfo userInfo);
 }

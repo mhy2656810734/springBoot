@@ -35,4 +35,30 @@
         </if>
         )
     </insert>
+    <insert id="addUser2">
+        insert into userinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null and username != ''">
+                username,
+            </if>
+            <if test="password != null and password !=''">
+                password,
+            </if>
+            <if test="photo != null and photo != ''">
+                photo,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null and username != ''">
+                #{username},
+            </if>
+            <if test="password != null and password !=''">
+                #{password},
+            </if>
+            <if test="photo != null and photo != ''">
+                #{photo},
+            </if>
+        </trim>
+    </insert>
 </mapper>

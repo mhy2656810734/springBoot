@@ -65,4 +65,13 @@ class UserMapperTest {
         int ret = userMapper.addUser(userInfo);
         System.out.println("添加:"+ret);
     }
+
+    @Test
+    void addUser2() {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUsername("张三");
+        userInfo.setPassword("111111");
+        int ret = userMapper.addUser2(userInfo);
+        System.out.println("添加:"+ret);
+    }
 }
