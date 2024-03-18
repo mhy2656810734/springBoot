@@ -3,7 +3,7 @@
 <mapper namespace="com.example.demo.mapper.UserMapper">
     <resultMap id="BaseMap" type="com.example.demo.entity.UserInfo">
        <id property="id" column="id"></id>
-        <result property="pwd" column="password"></result>
+        <result property="password" column="password"></result>
         <result property="username" column="username"></result>
     </resultMap>
     <select id="getAll" resultType="com.example.demo.entity.UserInfo">
@@ -34,31 +34,5 @@
             ,#{photo}
         </if>
         )
-    </insert>
-    <insert id="addUser2">
-        insert into userinfo
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="username != null and username != ''">
-                username,
-            </if>
-            <if test="password != null and password !=''">
-                password,
-            </if>
-            <if test="photo != null and photo != ''">
-                photo,
-            </if>
-        </trim>
-        values
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="username != null and username != ''">
-                #{username},
-            </if>
-            <if test="password != null and password !=''">
-                #{password},
-            </if>
-            <if test="photo != null and photo != ''">
-                #{photo},
-            </if>
-        </trim>
     </insert>
 </mapper>

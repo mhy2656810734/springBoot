@@ -32,5 +32,5 @@ public interface UserMapper {
                @Param("password") String password,
                @Param("newPassword") String newPassword);
     int addUser(UserInfo userInfo);
-    int addUser2(UserInfo userInfo);
+
 }
