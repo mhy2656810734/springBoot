@@ -15,4 +15,13 @@ import java.util.List;
 public interface ArticleMapper {
     ArticleInfoVO getDetail(@Param("id") Integer id);
     List<ArticleInfoVO> getByIdList(@Param("uid")Integer uid);
+    List<ArticleInfoVO> getListByIdOrTitle(@Param("id") Integer id,
+                                           @Param("title") String title);
+
+    /**
+     * 根据id删除文章des
+     * @param idList
+     * @return
+     */
+    int delByList(List<Integer> idList);
 }

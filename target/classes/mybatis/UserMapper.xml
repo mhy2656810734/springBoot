@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <resultMap id="BaseMap" type="com.example.demo.entity.UserInfo">
+       <id property="id" column="id"></id>
+        <result property="password" column="password"></result>
+        <result property="username" column="username"></result>
+    </resultMap>
+    <select id="getAll" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo
+    </select>
+    <select id="getById" resultMap = "BaseMap">
+        select * from userinfo where id = ${id}
+    </select>
+    <select id="getByUserName" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where username = ${username}
+    </select>
+    <select id="login" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where username = '${username}' and password = '${password}'
+    </select>
+    <select id="getByName" resultType="com.example.demo.entity.UserInfo">
+        select * from userinfo where username like concat('%',#{username},'%')
+    </select>
+    <update id="update">
+        update userinfo set password = #{newPassword} where id = #{id} and password = #{password}
+    </update>
+    <insert id="addUser">
+        insert into userinfo (username,password
+        <if test="photo != null ">
+            ,photo
+        </if>
+        ) values (#{username},#{password}
+        <if test="photo != null">
+            ,#{photo}
+        </if>
+        )
+    </insert>
+</mapper>
