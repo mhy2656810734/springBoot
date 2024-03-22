@@ -65,4 +65,15 @@ public class UserController {
     public UserInfo getById(@Param("id") Integer id) {
         return userService.getById(id);
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        System.out.println("执行了login方法");
+        return "hello login";
+    }
+    @RequestMapping("/test1")
+    public String test1() {
+        System.out.println("执行了test1方法");
+        return "hello test1";
+    }
 }

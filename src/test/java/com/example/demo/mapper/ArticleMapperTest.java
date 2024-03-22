@@ -7,7 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,5 +48,10 @@ class ArticleMapperTest {
         list.add(4);
         int ret = articleMapper.delByList(list);
         System.out.println("删除成功");
+    }
+    @Test
+    void delByLis() {
+        Map<String,Integer> map = new HashMap<>();
+        map.get("key");
     }
 }

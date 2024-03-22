@@ -5,7 +5,9 @@ import com.example.demo.entity.ArticleInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author mahaiyang
@@ -24,4 +26,5 @@ public interface ArticleMapper {
      * @return
      */
     int delByList(List<Integer> idList);
+    Map<String,Integer> map = new HashMap<>();
 }

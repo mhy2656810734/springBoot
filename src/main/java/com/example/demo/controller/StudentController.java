@@ -30,4 +30,8 @@ public class StudentController {
         log.error("我是error级别");
         return "已经打印了日志";
     }
+    @RequestMapping("/test")
+    public String test() {
+        return "没有配置aop";
+    }
 }
