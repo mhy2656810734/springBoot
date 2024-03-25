@@ -16,19 +16,19 @@ import java.time.LocalTime;
 @Aspect
 @Component
 public class UserAop {
-    @Pointcut("execution(* com.example.demo.controller.UserController.*(..))")
-    public void pointCut() {
-
-    }
-//    @Before("pointCut()")
-//    public void doBefore() {
-//        System.out.println("执行了前置通知"+ LocalTime.now());
+//    @Pointcut("execution(* com.example.demo.controller.UserController.*(..))")
+//    public void pointCut() {
+//
 //    }
-    @Around("pointCut()")
-    public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("开始执行环绕通知");
-        // 执行拦截方法
-        Object object = joinPoint.proceed();
-        System.out.println("结束环绕通知");
-    }
+////    @Before("pointCut()")
+////    public void doBefore() {
+////        System.out.println("执行了前置通知"+ LocalTime.now());
+////    }
+//    @Around("pointCut()")
+//    public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {
+//        System.out.println("开始执行环绕通知");
+//        // 执行拦截方法
+//        Object object = joinPoint.proceed();
+//        System.out.println("结束环绕通知");
+//    }
 }

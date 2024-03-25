@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Controller
 @ResponseBody
-@RequestMapping("/test")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
