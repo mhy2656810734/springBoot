@@ -59,19 +59,5 @@ public class PasswordTools {
 
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        while (true) {
-            System.out.println("请输入您的密码");
-            String dbPassword = PasswordTools.encrypt("123456");
-            String password = scan.next();
-            if (PasswordTools.decrypt(password,dbPassword)) {
-                System.out.println("密码输入正确！！");
-                break;
-            }
-            System.out.println("密码输入错误，请重新尝试！");
-        }
-    }
+    }git
 }
