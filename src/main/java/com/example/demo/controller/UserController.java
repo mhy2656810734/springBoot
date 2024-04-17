@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.UserInfo;
 import com.example.demo.mapper.UserMapper;
+import com.example.demo.service.TestService;
 import com.example.demo.service.UserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ import java.util.List;
 @ResponseBody
 @RequestMapping("/user")
 public class UserController {
+    @Autowired
+    private TestService testService;
     @Autowired
     private UserService userService;
     @Value("${server.port}")
@@ -75,5 +78,10 @@ public class UserController {
     public String test1() {
         System.out.println("执行了test1方法");
         return "hello test1";
+    }
+    @RequestMapping("/test2")
+    public String test2() {
+        testService.test();
+        return "hello test2";
     }
 }
