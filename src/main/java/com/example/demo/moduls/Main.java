@@ -6,7 +6,8 @@ package com.example.demo.moduls;
  */
 public class Main {
     public static void main(String[] args) {
-        String str = "  你,              好!  ";
-        System.out.println(str.replaceAll("\\s+", ""));
+        String s1 = "runoob";
+        String s2 = "runoob";
+System.out.println("s1 == s2 is:" + s1 == s2);
     }
 }
