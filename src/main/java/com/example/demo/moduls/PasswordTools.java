@@ -59,5 +59,5 @@ public class PasswordTools {
 
         }
         return false;
-    }git
+    }
 }
