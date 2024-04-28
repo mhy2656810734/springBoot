@@ -34,7 +34,7 @@ public class Mongo implements MongoDbInterface{
 
         // 定义索引
         IndexDefinition indexDefinition = new Index().on(data, Sort.Direction.ASC);
-        // 创建索引
+      
         mongoTemplate.indexOps("mycollection").ensureIndex(indexDefinition);
 
     }

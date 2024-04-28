@@ -23,7 +23,7 @@ public class StudentController {
     private static final Logger log = LoggerFactory.getLogger(StudentController.class);
     @RequestMapping("/log")
     public String func() {
-        log.trace("我是trace级别");
+
         log.debug("我是debug级别");
         log.info("我是默认级别info");
         log.warn("我是warn级别");
